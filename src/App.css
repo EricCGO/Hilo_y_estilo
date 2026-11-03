@@ -1,0 +1,1684 @@
+
+
+/* =========================================
+
+   ADSO | DASHBOARD PREMIUM
+
+   Diseño moderno + animaciones
+
+========================================= */
+
+:root {
+
+    --primary: #0b8f68;
+
+    --primary-dark: #075c46;
+
+    --primary-light: #d9f7e9;
+
+    --accent: #65e6b4;
+
+    --background: #f3f7f6;
+
+    --surface: #ffffff;
+
+    --sidebar: #102f29;
+
+    --sidebar-light: #19463a;
+
+    --text: #1c302a;
+
+    --muted: #71817a;
+
+    --border: #e2ece7;
+
+    --shadow: 0 8px 30px rgba(19, 65, 48, 0.07);
+
+    --shadow-hover: 0 18px 40px rgba(11, 110, 78, 0.15);
+
+    --radius: 18px;
+
+    --transition: 0.3s ease;
+
+}
+
+/* =========================================
+
+   1. RESET Y FONDO
+
+========================================= */
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+    scroll-padding-top: 25px;
+
+}
+
+body {
+
+    overflow-x: hidden;
+    margin: 0;
+
+    font-family: "Segoe UI", Inter, Arial, sans-serif;
+
+    color: var(--text);
+
+    background:
+
+        radial-gradient(
+
+            ellipse at 90% 5%,
+
+            rgba(101, 230, 180, 0.12),
+
+            transparent 35%
+
+        ),
+
+        var(--background);
+
+    line-height: 1.7;
+
+}
+
+#root {
+
+    min-height: 100vh;
+
+}
+
+a {
+
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+::selection {
+
+    background: var(--primary);
+
+    color: white;
+
+}
+
+/* =========================================
+
+   2. ANIMACIONES GENERALES
+
+========================================= */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(18px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+@keyframes slideDown {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-22px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+@keyframes slideRight {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateX(-20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+    }
+
+}
+
+@keyframes glow {
+
+    0%, 100% {
+
+        box-shadow: 0 0 0 rgba(101, 230, 180, 0);
+
+    }
+
+    50% {
+
+        box-shadow: 0 0 24px rgba(101, 230, 180, 0.18);
+
+    }
+
+}
+
+@keyframes gradientMove {
+
+    0% {
+
+        background-position: 0% 50%;
+
+    }
+
+    50% {
+
+        background-position: 100% 50%;
+
+    }
+
+    100% {
+
+        background-position: 0% 50%;
+
+    }
+
+}
+
+@keyframes float {
+
+    0%, 100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-5px);
+
+    }
+
+}
+
+/* =========================================
+
+   3. ESTRUCTURA PRINCIPAL
+
+========================================= */
+
+.layout {
+
+    display: grid;
+
+    grid-template-columns: 260px minmax(0, 1fr);
+
+    grid-template-areas:
+
+        "encabezado encabezado"
+
+        "sidebar contenido"
+
+        "sidebar presentacion"
+
+        "pie pie";
+
+    min-height: 100vh;
+
+    align-content: start;
+
+}
+
+/* =========================================
+
+   4. ENCABEZADO PREMIUM
+
+========================================= */
+
+.encabezado {
+
+    grid-area: encabezado;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    position: relative;
+
+    z-index: 100;
+
+    isolation: isolate;
+
+    overflow: visible;
+
+    padding: 30px 38px;
+
+    color: #ffffff;
+
+    background: linear-gradient(
+
+        120deg,
+
+        #063d31,
+
+        #087f5b,
+
+        #0c9c72,
+
+        #075c46
+
+    );
+
+    background-size: 250% 250%;
+
+    animation: gradientMove 12s ease infinite,
+
+               slideDown 0.7s ease both;
+
+    box-shadow: 0 8px 28px rgba(7, 92, 70, 0.18);
+
+}
+
+/* Luz decorativa del encabezado */
+
+.encabezado::before {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: -1;
+
+    width: 280px;
+
+    height: 280px;
+
+    right: -65px;
+
+    top: -170px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 50%;
+
+    box-shadow:
+
+        0 0 0 30px rgba(255, 255, 255, 0.035),
+
+        0 0 0 65px rgba(255, 255, 255, 0.025);
+
+}
+
+.encabezado h1,
+
+.encabezado h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 8px;
+
+    line-height: 1.3;
+
+    letter-spacing: -0.5px;
+
+}
+
+.encabezado p {
+
+    margin-bottom: 0;
+
+    color: rgba(255, 255, 255, 0.82);
+
+}
+
+.encabezado nav {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+}
+
+.encabezado nav a {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 9px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    border-radius: 10px;
+
+    color: white;
+
+    text-decoration: none;
+
+    margin-right: 0;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    transition: all var(--transition);
+
+}
+
+.encabezado nav a:hover {
+
+    background: rgba(255, 255, 255, 0.18);
+
+    border-color: rgba(255, 255, 255, 0.4);
+
+    transform: translateY(-3px);
+
+}
+
+/* =========================================
+
+   5. SIDEBAR / MENÚ LATERAL
+
+========================================= */
+
+.sidebar {
+
+    grid-area: sidebar;
+
+    position: relative;
+
+    z-index: 50;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 100%;
+
+    padding: 30px 18px;
+
+    color: white;
+
+    background: linear-gradient(
+
+        180deg,
+
+        var(--sidebar),
+
+        #0b2822 100%
+
+    );
+
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+
+    animation: slideRight 0.65s ease both;
+
+}
+
+/* Línea decorativa */
+
+.sidebar::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+    width: 3px;
+
+    height: 100%;
+
+    background: linear-gradient(
+
+        transparent,
+
+        var(--accent),
+
+        transparent
+
+    );
+
+    opacity: 0.55;
+
+}
+
+.Sidebar-titulo {
+
+    margin: 0 0 25px;
+
+    padding: 0 12px 17px;
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+}
+
+.sidebar nav ul {
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+.sidebar-menu li {
+
+    margin-bottom: 8px;
+
+}
+
+.sidebar-menu a {
+
+    position: relative;
+
+    display: block;
+
+    overflow: hidden;
+
+    padding: 13px 14px;
+
+    color: #c9ded5;
+
+    text-decoration: none;
+
+    font-size: 0.95rem;
+
+    font-weight: 500;
+
+    border: 1px solid transparent;
+
+    border-radius: 12px;
+
+    transition:
+
+        color var(--transition),
+
+        background var(--transition),
+
+        border-color var(--transition),
+
+        transform var(--transition);
+
+}
+
+/* Indicador lateral */
+
+.sidebar-menu a::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 25%;
+
+    height: 50%;
+
+    width: 3px;
+
+    border-radius: 5px;
+
+    background: var(--accent);
+
+    transform: scaleY(0);
+
+    transition: transform var(--transition);
+
+}
+
+.sidebar-menu a:hover {
+
+    color: #ffffff;
+
+    background: linear-gradient(
+
+        100deg,
+
+        rgba(101, 230, 180, 0.16),
+
+        rgba(101, 230, 180, 0.04)
+
+    );
+
+    border-color: rgba(101, 230, 180, 0.12);
+
+    transform: translateX(5px);
+
+}
+
+.sidebar-menu a:hover::before {
+
+    transform: scaleY(1);
+
+}
+
+/* Clase opcional para el enlace activo */
+
+.sidebar-menu a.activo {
+
+    color: #ffffff;
+
+    background: rgba(101, 230, 180, 0.13);
+
+    border-color: rgba(101, 230, 180, 0.2);
+
+}
+
+.sidebar-menu a.activo::before {
+
+    transform: scaleY(1);
+
+}
+
+.sidebar-pie {
+
+    margin-top: auto;
+
+    padding: 18px 10px 0;
+
+    color: #9bbcaf;
+
+    font-size: 0.82rem;
+
+    letter-spacing: 0.4px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+}
+
+/* =========================================
+
+   6. CONTENIDO PRINCIPAL
+
+========================================= */
+
+.contenido {
+
+    grid-area: contenido;
+
+    display: block;
+
+    min-width: 0;
+
+    padding: 38px;
+
+    animation: fadeIn 0.8s 0.1s ease both;
+
+}
+
+.contenido h2 {
+
+    margin: 0 0 12px;
+
+    color: var(--primary-dark);
+
+    font-size: clamp(1.65rem, 3vw, 2.3rem);
+
+    line-height: 1.3;
+
+    letter-spacing: -0.8px;
+
+}
+
+.contenido > p {
+
+    max-width: 760px;
+
+    margin: 0 0 28px;
+
+    color: var(--muted);
+
+    font-size: 1.02rem;
+
+}
+
+/* Subrayado decorativo para el primer título */
+
+.contenido h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 65px;
+
+    height: 4px;
+
+    margin-top: 15px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+
+        90deg,
+
+        var(--primary),
+
+        var(--accent)
+
+    );
+
+}
+
+/* =========================================
+   7. TARJETAS PREMIUM — COMPONENTE REACT
+========================================= */
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 28px;
+    align-items: stretch;
+}
+
+.tarjeta,
+.destacada {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+
+    min-width: 0;
+    min-height: 220px;
+    padding: 28px 26px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+
+    animation: fadeIn 0.7s ease both;
+
+    transition:
+        transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+}
+
+/* Línea decorativa superior */
+
+.tarjeta::before,
+    .destacada::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(
+            90deg,
+            var(--primary-dark),
+            var(--primary),
+            var(--accent)
+        );
+        transform: scaleX(0.25);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+    }
+
+    .tarjeta::after,
+    .destacada::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: -80%;
+        left: -100%;
+        width: 55%;
+        height: 250%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(101, 230, 180, 0.12),
+            transparent
+        );
+        transform: rotate(20deg);
+        transition: left 0.7s ease;
+    }
+
+    .tarjeta:hover,
+    .destacada:hover {
+        transform: translateY(-7px);
+        border-color: rgba(11, 143, 104, 0.35);
+        box-shadow: var(--shadow-hover);
+    }
+
+    .tarjeta:hover::before,
+    .destacada:hover::before {
+        transform: scaleX(1);
+    }
+
+    .tarjeta:hover::after,
+    .destacada:hover::after {
+        left: 150%;
+    }
+
+    /* Icono del componente React */
+
+    .tarjeta-icono {
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        width: 56px;
+        height: 56px;
+        margin-bottom: 3px;
+        color: var(--primary-dark);
+        background: var(--primary-light);
+        border: 1px solid rgba(11, 143, 104, 0.08);
+        border-radius: 15px;
+        font-size: 1.7rem;
+        line-height: 1;
+        transition:
+            transform var(--transition),
+            color var(--transition),
+            background var(--transition);
+    }
+
+    .tarjeta:hover .tarjeta-icono,
+    .destacada:hover .tarjeta-icono {
+        transform: translateY(-2px) rotate(-4deg) scale(1.06);
+        color: var(--primary-dark);
+        background: #c2f2dd;
+    }
+
+    /* Título: compatible con tu componente que utiliza h2 */
+
+    .tarjeta h2,
+    .tarjeta h3,
+    .destacada h2,
+    .destacada h3 {
+        margin: 0;
+        color: var(--primary-dark);
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.4;
+        letter-spacing: -0.3px;
+    }
+
+    /* Descripción */
+
+    .tarjeta p,
+    .destacada p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.96rem;
+        line-height: 1.7;
+    }
+
+    /* Horas */
+
+    .tarjeta .tarjeta-horas,
+    .destacada .tarjeta-horas {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: auto;
+        padding: 8px 13px;
+        color: var(--primary-dark);
+        background: var(--primary-light);
+        border: 1px solid rgba(11, 143, 104, 0.1);
+        border-radius: 10px;
+        font-size: 0.88rem;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+    .tarjeta-destacada .tarjeta-icono {
+        color: #ffffff;
+        background: linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+        border-color: transparent;
+        box-shadow: 0 5px 14px rgba(11, 143, 104, 0.2);
+    }
+
+    .tarjeta-destacada .tarjeta-horas {
+    color: #ffffff;
+    background: var(--primary);
+    border-color: transparent;
+}
+
+/* Hover de la tarjeta destacada */
+
+.tarjeta-destacada:hover {
+    border-color: var(--primary-dark);
+    box-shadow: 0 18px 40px rgba(11, 110, 78, 0.2);
+}
+
+/* =========================================
+   RESPONSIVE DE LAS TARJETAS
+========================================= */
+
+@media (max-width: 950px) {
+    .tarjeta,
+    .destacada {
+        padding: 23px;
+    }
+
+    .tarjeta h2,
+    .tarjeta h3,
+    .destacada h2,
+    .destacada h3 {
+        font-size: 1.17rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .tarjetas {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .tarjeta,
+    .destacada {
+        min-height: 190px;
+        padding: 23px;
+        gap: 12px;
+    }
+
+    .tarjeta-icono {
+        width: 49px;
+        height: 49px;
+        font-size: 1.5rem;
+    }
+
+    .tarjeta h2,
+    .tarjeta h3,
+    .destacada h2,
+    .destacada h3 {
+        font-size: 1.15rem;
+    }
+
+    .tarjeta p,
+    .destacada p {
+        font-size: 0.92rem;
+    }
+}
+
+/* =========================================
+
+   8. PRESENTACIÓN PERSONAL
+
+========================================= */
+
+.Tarjeta_presentacion {
+
+    grid-area: presentacion;
+
+    position: relative;
+
+    overflow: hidden;
+
+    margin: 0 38px 38px;
+
+    padding: 32px;
+
+    text-align: center;
+
+    color: var(--text);
+
+    background: linear-gradient(
+
+        145deg,
+
+        #ffffff,
+
+        #f6fcf8
+
+    );
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    box-shadow: var(--shadow);
+
+    animation: fadeIn 0.9s 0.2s ease both;
+
+    transition:
+
+        box-shadow var(--transition),
+
+        transform var(--transition);
+
+}
+
+.Tarjeta_presentacion:hover {
+
+    box-shadow: var(--shadow-hover);
+
+}
+
+/* Círculo decorativo */
+
+.Tarjeta_presentacion::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    top: -100px;
+
+    right: -65px;
+
+    background: rgba(101, 230, 180, 0.13);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+}
+
+.Tarjeta_presentacion h2,
+
+.Tarjeta_presentacion h3 {
+
+    position: relative;
+
+    margin-top: 0;
+
+    color: var(--primary-dark);
+
+}
+
+.Tarjeta_presentacion p {
+
+    position: relative;
+
+    color: var(--muted);
+
+}
+
+.Tarjeta_presentacion ul {
+
+    position: relative;
+
+    width: fit-content;
+
+    max-width: 100%;
+
+    margin: 18px auto 0;
+
+    padding-left: 24px;
+
+    text-align: left;
+
+}
+
+.Tarjeta_presentacion li {
+
+    margin-bottom: 9px;
+
+    padding-left: 4px;
+
+}
+
+.Tarjeta_presentacion li::marker {
+
+    color: var(--primary);
+
+}
+
+/* =========================================
+
+   9. PIE DE PÁGINA
+
+========================================= */
+
+footer {
+
+    grid-area: pie;
+
+    padding: 24px 20px;
+
+    text-align: center;
+
+    background: #e8f0ec;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 0.9rem;
+
+}
+
+footer p {
+
+    margin: 0;
+
+}
+
+footer a {
+
+    color: var(--primary-dark);
+
+    text-decoration: none;
+
+    transition: color var(--transition);
+
+}
+
+footer a:hover {
+
+    color: var(--primary);
+
+    text-decoration: underline;
+
+}
+
+/* =========================================
+
+   10. SCROLLBAR PERSONALIZADA
+
+========================================= */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background: var(--background);
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #b8d5c8;
+
+    border: 2px solid var(--background);
+
+    border-radius: 20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: var(--primary);
+
+}
+
+/* =========================================
+
+   11. TABLET
+
+========================================= */
+
+@media (max-width: 950px) {
+
+    .layout {
+
+        grid-template-columns: 220px minmax(0, 1fr);
+
+    }
+
+    .encabezado {
+
+        padding: 26px;
+
+    }
+
+    .contenido {
+
+        padding: 28px;
+
+    }
+
+    .tarjetas {
+
+        gap: 18px;
+
+    }
+
+    .tarjeta,
+    .destacada {
+
+        padding: 22px;
+
+    }
+
+    .Tarjeta_presentacion {
+
+        margin: 0 28px 28px;
+
+    }
+
+}
+
+/* =========================================
+
+   12. CELULARES
+
+========================================= */
+
+@media (max-width: 650px) {
+
+    .layout {
+
+        grid-template-columns: minmax(0, 1fr);
+
+        grid-template-areas:
+
+            "encabezado"
+
+            "sidebar"
+
+            "contenido"
+
+            "presentacion"
+
+            "pie";
+
+    }
+
+    .encabezado {
+
+        padding: 24px 20px;
+
+    }
+
+    .encabezado nav {
+
+        gap: 7px;
+
+    }
+
+    .encabezado nav a {
+
+        padding: 8px 10px;
+
+        font-size: 0.9rem;
+
+    }
+
+    .sidebar {
+
+        padding: 20px;
+
+        min-height: auto;
+
+    }
+
+    .Sidebar-titulo {
+
+        margin-bottom: 15px;
+
+        padding-bottom: 12px;
+
+    }
+
+    .sidebar-menu {
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 6px;
+
+    }
+
+    .sidebar-menu li {
+
+        margin: 0;
+
+        min-width: 0;
+
+    }
+
+    .sidebar-menu a {
+
+        padding: 11px 9px;
+
+        font-size: 0.88rem;
+
+    }
+
+    .sidebar-pie {
+
+        margin-top: 18px;
+
+    }
+
+    .contenido {
+
+        padding: 27px 20px;
+
+    }
+
+    .tarjetas {
+
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 18px;
+
+    }
+
+    .tarjeta,
+    .destacada {
+
+        padding: 23px;
+
+    }
+
+    .Tarjeta_presentacion {
+
+        margin: 0 20px 25px;
+
+        padding: 25px 20px;
+
+    }
+
+}
+
+/* =========================================
+
+   13. ACCESIBILIDAD
+
+   Reducir movimiento si el usuario lo prefiere
+
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+
+    *::before,
+
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+
+    }
+
+}
+
+/* =========================================
+   14. ENCABEZADO CON PERFIL DE USUARIO
+========================================= */
+
+.encabezado-superior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 22px;
+}
+
+.encabezado-marca {
+    flex: 1;
+    min-width: 0;
+}
+
+.encabezado-etiqueta {
+    display: inline-block;
+    margin-bottom: 8px;
+    padding: 4px 10px;
+    color: #c9f8e5;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Botón de usuario */
+
+.MenuUsuario {
+    position: relative;
+    z-index: 30;
+    flex-shrink: 0;
+}
+
+.menu_usuario-boton {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 220px;
+    padding: 9px 12px;
+    color: white;
+    font: inherit;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    cursor: pointer;
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.menu_usuario-boton:hover,
+.MenuUsuario:hover .menu_usuario-boton,
+.MenuUsuario:focus-within .menu_usuario-boton {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: rgba(166, 255, 218, 0.55);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu_usuario-boton:focus-visible,
+.menu-desplegable a:focus-visible,
+.menu-desplegable button:focus-visible {
+    outline: 3px solid #8ef5ca;
+    outline-offset: 3px;
+}
+
+.avatar {
+    display: block;
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #8ef5ca;
+    background: #e0f5eb;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.menu_usuario-boton:hover .avatar {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 4px rgba(142, 245, 202, 0.13);
+}
+
+.menu-usuarios-datos {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+    gap: 2px;
+}
+
+.menu-usuario-nombre {
+    overflow: hidden;
+    color: white;
+    font-size: 0.91rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.menu-usuario-rol {
+    overflow: hidden;
+    color: #c0e7d6;
+    font-size: 0.78rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.flecha {
+    flex-shrink: 0;
+    color: #b8f5d9;
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.MenuUsuario:hover .flecha,
+.MenuUsuario:focus-within .flecha {
+    transform: rotate(180deg);
+}
+
+/* Menú desplegable animado */
+
+.menu-desplegable {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 260px;
+    max-width: calc(100vw - 36px);
+    margin: 0;
+    padding: 8px;
+    list-style: none;
+    color: #24332f;
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid #e0ebe5;
+    border-radius: 16px;
+    box-shadow:
+        0 18px 45px rgba(4, 38, 27, 0.2),
+        0 3px 10px rgba(4, 38, 27, 0.06);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px) scale(0.97);
+    transform-origin: top right;
+    transition:
+        opacity 0.22s ease,
+        transform 0.22s ease,
+        visibility 0.22s ease;
+}
+
+.MenuUsuario:hover .menu-desplegable,
+.MenuUsuario:focus-within .menu-desplegable {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+.menu-usuario-encabezado {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-bottom: 7px;
+    padding: 15px 13px 14px;
+    background: linear-gradient(135deg, #effaf4, #ffffff);
+    border-radius: 11px;
+}
+
+.menu-usuario-etiqueta {
+    margin-bottom: 5px;
+    color: #0b8f68;
+    font-size: 0.67rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.menu-usuario-encabezado strong {
+    overflow: hidden;
+    color: #173b31;
+    font-size: 0.95rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.menu-usuario-encabezado > span:last-child {
+    color: #71817a;
+    font-size: 0.8rem;
+}
+
+.menu-desplegable li:not(.Separador, .menu-usuario-encabezado) {
+    margin: 3px 0;
+}
+
+.menu-desplegable a,
+.menu-desplegable .cerrar-sesion {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    width: 100%;
+    padding: 12px;
+    color: #344a41;
+    background: transparent;
+    border: 0;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+.menu-desplegable a:hover {
+    padding-left: 17px;
+    color: #075c46;
+    background: #eaf7f0;
+}
+
+.menu-desplegable .cerrar-sesion {
+    color: #c0393b;
+}
+
+.menu-desplegable .cerrar-sesion:hover {
+    padding-left: 17px;
+    color: #a32026;
+    background: #fff0f0;
+}
+
+.menu-desplegable a span,
+.menu-desplegable .cerrar-sesion span {
+    width: 22px;
+    text-align: center;
+}
+
+.menu-desplegable .Separador {
+    height: 1px;
+    margin: 7px 5px;
+    background: #e8eeea;
+    list-style: none;
+}
+
+/* Adaptación del perfil a móviles */
+
+@media (max-width: 650px) {
+    .encabezado {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .MenuUsuario {
+        width: 100%;
+    }
+
+    .menu_usuario-boton {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .menu-desplegable {
+        left: 0;
+        right: auto;
+        width: 100%;
+        max-width: 100%;
+        transform-origin: top left;
+    }
+}
+
+/* Accesibilidad para usuarios que reducen animaciones */
+
+@media (prefers-reduced-motion: reduce) {
+    .menu_usuario-boton,
+    .avatar,
+    .flecha,
+    .menu-desplegable,
+    .menu-desplegable a,
+    .menu-desplegable .cerrar-sesion {
+        transition: none;
+    }
+}
+
+
+/* =========================================
+   TARJETAS NORMALES — SIN EFECTOS HOVER
+========================================= */
+
+.tarjeta:not(.tarjeta-destacada):hover,
+.destacada:hover {
+    transform: none;
+    background: #ffffff;
+    border-color: #e2ece7;
+    box-shadow: 0 4px 16px rgba(19, 65, 48, 0.045);
+    cursor: default;
+}
+
+/* Mantener la línea superior sin animación */
+.tarjeta:not(.tarjeta-destacada):hover::before,
+.destacada:hover::before {
+    transform: scaleX(0.12);
+    opacity: 0.45;
+}
+
+/* El icono no cambia al pasar el cursor */
+.tarjeta:not(.tarjeta-destacada):hover .tarjeta-icono,
+.destacada:hover .tarjeta-icono {
+    transform: none;
+    color: #43816b;
+    background: #f0f7f3;
+}
+
+/* Evitar el brillo al pasar el cursor */
+.tarjeta:not(.tarjeta-destacada)::after,
+.destacada::after {
+    content: none;
+}
