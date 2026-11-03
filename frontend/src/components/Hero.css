@@ -1,0 +1,70 @@
+/* Contenedor principal con degradado de fondo (Azul oscuro a violeta/azul brillante) */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+  min-height: 450px;
+  background: linear-gradient(135deg, #0d0a1b 0%, #1e2993 50%, #2b3bf6 100%);
+  color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Lado izquierdo (Texto) */
+.hero-content {
+  max-width: 480px;
+}
+
+.hero-title {
+  font-family: 'Times New Roman', Serif, Georgia; /* Estilo tipográfico elegante para el título */
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.hero-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  margin-bottom: 30px;
+}
+
+/* Botón estilo café/bronce */
+.hero-btn {
+  background-color: #5c4438;
+  color: #ffffff;
+  border: none;
+  padding: 12px 26px;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #4a362c;
+}
+
+/* Lado derecho (Tarjeta de imagen) */
+.hero-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Fondo beige redondeado que sobresale detrás/alrededor de la imagen */
+.hero-card-bg {
+  background-color: #fceee3;
+  padding: 14px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image {
+  width: 320px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}

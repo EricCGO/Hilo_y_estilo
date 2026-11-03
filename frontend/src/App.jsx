@@ -1,8 +1,12 @@
-export default function App() {
+import { Hero } from './components/Hero';
+
+function App() {
   return (
     <div>
-      <h1>Hilo y Estilo</h1>
-      <p>Proyecto del equipo ADSO — estructura inicial del frontend.</p>
+      {/* Tu sección Hero */}
+      <Hero />
     </div>
   );
 }
+
+export default App;
