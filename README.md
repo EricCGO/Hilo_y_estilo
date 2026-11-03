@@ -1,16 +1,32 @@
-# React + Vite
+# Hilo y Estilo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto front-end del equipo (ADSO): tienda/branding **Hilo y Estilo**, con HTML/CSS/JS generado por el equipo.
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [React 19](https://react.dev) + [Vite](https://vite.dev) (build y dev server con HMR)
+- ESLint con los plugins de React
 
-## React Compiler
+## Cómo montar el proyecto ( nueva máquina)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+git clone https://github.com/EricCGO/Hilo_y_estilo.git
+cd Hilo_y_estilo
+npm install     # instala node_modules
+npm run dev     # abre el servidor de desarrollo (http://localhost:5173)
+```
 
-## Expanding the ESLint configuration
+## Scripts disponibles
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Comando          | Qué hace                                        |
+|------------------|-------------------------------------------------|
+| `npm run dev`    | Servidor de desarrollo con recarga en caliente  |
+| `npm run build`  | Genera la versión de producción en `dist/`      |
+| `npm run preview`| Sirve el build de producción                                    |
+| `npm run lint`   | Revisa el código con ESLint                     |
+
+## Estructura de ramas
+
+- `main` — la rama protegida, solo recibe PRs
+- `develop` — rama de integración del equipo
+- `feature/<nombre>/<tarea>` — ramas de trabajo de cada quien (se crean desde `develop`)
