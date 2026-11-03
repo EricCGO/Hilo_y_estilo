@@ -1,0 +1,44 @@
+.encabezado-principal {
+  background-color: #0d1b2a; /* Azul oscuro elegante similar al de la referencia */
+  color: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 2px solid #d4af37; /* Detalle sutil en tono dorado */
+  gap: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.encabezado-logo-container {
+  max-width: 120px;
+}
+
+.logo-imagen {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.encabezado-textos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.encabezado-textos h1 {
+  font-family: 'Times New Roman', serif; /* O una fuente serif elegante */
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  margin: 0;
+  color: #ffffff;
+}
+
+.encabezado-textos p {
+  font-size: 0.9rem;
+  letter-spacing: 5px;
+  margin: 0.3rem 0 0 0;
+  color: #d4af37; /* Tono dorado para el eslogan */
+  font-weight: 300;
+}
