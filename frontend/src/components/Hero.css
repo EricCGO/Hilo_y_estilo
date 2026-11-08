@@ -1,70 +1,118 @@
-/* Contenedor principal con degradado de fondo (Azul oscuro a violeta/azul brillante) */
 .hero-section {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 80px 10%;
-  min-height: 450px;
-  background: linear-gradient(135deg, #0d0a1b 0%, #1e2993 50%, #2b3bf6 100%);
+  gap: 60px;
+  background: radial-gradient(circle at 90% 10%, #17203d 0%, #070a14 75%);
   color: #ffffff;
-  font-family: system-ui, -apple-system, sans-serif;
 }
 
-/* Lado izquierdo (Texto) */
 .hero-content {
-  max-width: 480px;
+  max-width: 600px;
+}
+
+.hero-badge {
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  color: #d4af37;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 15px;
 }
 
 .hero-title {
-  font-family: 'Times New Roman', Serif, Georgia; /* Estilo tipográfico elegante para el título */
-  font-size: 3rem;
+  font-family: 'Cinzel', serif;
+  font-size: 3.8rem;
   font-weight: 700;
+  line-height: 1.1;
   margin-bottom: 20px;
-  letter-spacing: -0.5px;
+  color: #ffffff;
 }
 
 .hero-description {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #e2e8f0;
-  margin-bottom: 30px;
+  color: #94a3b8;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 35px;
 }
 
-/* Botón estilo café/bronce */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
 .hero-btn {
-  background-color: #5c4438;
-  color: #ffffff;
-  border: none;
-  padding: 12px 26px;
-  font-size: 0.95rem;
-  border-radius: 4px;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
-.hero-btn:hover {
-  background-color: #4a362c;
+.hero-btn.primary {
+  background: linear-gradient(135deg, #d4af37 0%, #aa8228 100%);
+  color: #070a14;
+  border: none;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
 }
 
-/* Lado derecho (Tarjeta de imagen) */
+.hero-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.hero-btn.secondary {
+  background: transparent;
+  color: #f3e5ab;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.hero-btn.secondary:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: #d4af37;
+}
+
+/* Imagen y tarjeta dorada con sombra de neón azul/dorado */
 .hero-image-wrapper {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Fondo beige redondeado que sobresale detrás/alrededor de la imagen */
 .hero-card-bg {
-  background-color: #fceee3;
-  padding: 14px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(212, 175, 55, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 .hero-image {
-  width: 320px;
-  height: 220px;
+  width: 100%;
+  max-width: 480px;
+  height: 380px;
   object-fit: cover;
   border-radius: 12px;
   display: block;
+}
+
+@media (max-width: 968px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .hero-buttons {
+    justify-content: center;
+  }
 }
