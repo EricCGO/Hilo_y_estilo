@@ -1,0 +1,26 @@
+@import '../../styles/tokens.css';
+
+.envio-timeline { display: grid; gap: 0; padding: 0; margin: 1rem 0 0; list-style: none; }
+.envio-timeline li {
+  position: relative;
+  padding: 0 0 1.25rem 2rem;
+  border-left: 2px solid var(--border-soft);
+  margin-left: 0.5rem;
+  color: var(--color-slate-400);
+  font-size: 0.85rem;
+}
+.envio-timeline li::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-bg-surface);
+  border: 2px solid var(--color-accent-cyan);
+}
+.envio-timeline li.activo { color: var(--color-accent-light); font-weight: 700; }
+.envio-timeline li:last-child { border-left-color: transparent; }
+
+.envio-guia { font-family: var(--font-display); letter-spacing: 0.08em; color: var(--color-accent-light); }

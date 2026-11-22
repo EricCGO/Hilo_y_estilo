@@ -1,0 +1,119 @@
+[
+{
+  "model": "catalogo.categoria",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-11-22T12:58:46.974Z",
+    "updated_at": "2026-11-22T12:58:46.974Z",
+    "nombre": "Hilos e hilazas",
+    "slug": "hilos-e-hilazas",
+    "descripcion": "Hilos de alta resistencia para máquinas y telares.",
+    "activa": true
+  }
+},
+{
+  "model": "catalogo.categoria",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-11-22T12:58:46.978Z",
+    "updated_at": "2026-11-22T12:58:46.978Z",
+    "nombre": "Telas y tejidos caucanos",
+    "slug": "telas-y-tejidos",
+    "descripcion": "Tejidos artesanales y algodón local.",
+    "activa": true
+  }
+},
+{
+  "model": "catalogo.categoria",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-11-22T12:58:46.980Z",
+    "updated_at": "2026-11-22T12:58:46.980Z",
+    "nombre": "Herramientas y kits",
+    "slug": "herramientas-y-kits",
+    "descripcion": "Tijeras, agujas y kits de diseño.",
+    "activa": true
+  }
+},
+{
+  "model": "catalogo.categoria",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-11-22T12:58:46.982Z",
+    "updated_at": "2026-11-22T12:58:46.982Z",
+    "nombre": "Repuestos y maquinaria",
+    "slug": "repuestos-y-maquinaria",
+    "descripcion": "Repuestos para maquinaria textil.",
+    "activa": true
+  }
+},
+{
+  "model": "catalogo.categoria",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-11-22T12:58:46.984Z",
+    "updated_at": "2026-11-22T12:58:46.984Z",
+    "nombre": "Tintes y colorantes",
+    "slug": "tintes-y-colorantes",
+    "descripcion": "Tintes artesanales para fibras naturales.",
+    "activa": true
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-11-22T12:58:46.988Z",
+    "updated_at": "2026-11-22T12:58:46.988Z",
+    "categoria": 2,
+    "nombre": "Tela Sagrada Caucana",
+    "slug": "tela-sagrada-caucana",
+    "descripcion": "Tejido 100% algodón de alta resistencia para confección artesanal.",
+    "sku": "SKU-TEL-001",
+    "precio": "180000.00",
+    "stock": 25,
+    "stock_minimo": 5,
+    "activo": true,
+    "imagen": "",
+    "atributos": {}
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-11-22T12:58:46.994Z",
+    "updated_at": "2026-11-22T12:58:46.994Z",
+    "categoria": 1,
+    "nombre": "Hilo Hilaza Profesional",
+    "slug": "hilo-hilaza-profesional",
+    "descripcion": "Bobina reforzada de gran durabilidad para máquinas industriales.",
+    "sku": "SKU-HIL-001",
+    "precio": "32000.00",
+    "stock": 80,
+    "stock_minimo": 10,
+    "activo": true,
+    "imagen": "",
+    "atributos": {}
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-11-22T12:58:46.999Z",
+    "updated_at": "2026-11-22T12:58:46.999Z",
+    "categoria": 3,
+    "nombre": "Kit de Herramientas",
+    "slug": "kit-de-herramientas",
+    "descripcion": "Tijeras de precisión y agujas de bronce para acabados finos.",
+    "sku": "SKU-HER-001",
+    "precio": "95000.00",
+    "stock": 15,
+    "stock_minimo": 4,
+    "activo": true,
+    "imagen": "",
+    "atributos": {}
+  }
+}
+]

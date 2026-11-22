@@ -1,0 +1,13 @@
+@import '../../styles/tokens.css';
+
+.metricas { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.metrica { background: var(--bg-surface); border: 1px solid var(--border-soft); border-radius: var(--radius-md); padding: 1.25rem; }
+.metrica span { font-size: 0.75rem; color: var(--color-slate-400); text-transform: uppercase; letter-spacing: 0.08em; }
+.metrica strong { display: block; font-family: var(--font-display); font-size: 1.8rem; color: var(--color-accent-light); margin-top: 0.4rem; }
+
+.admin-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.admin-form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.acciones-tabla { display: flex; gap: 0.4rem; }
+.acciones-tabla button { width: 32px; height: 32px; display: grid; place-items: center; border-radius: var(--radius-sm); border: 1px solid var(--border-soft); background: var(--bg-surface); color: var(--color-accent-light); }
+.acciones-tabla button:hover { border-color: var(--border-accent); }
+.estado-select { padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: var(--color-bg-panel); color: var(--color-white); border: 1px solid var(--border-soft); font-size: 0.8rem; }

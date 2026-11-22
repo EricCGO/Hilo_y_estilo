@@ -1,0 +1,95 @@
+/* ==========================================================
+   Sistema de diseño — Hilo y Estilo
+   Identidad: azul noche / carbón + acentos azul eléctrico y cian
+   ========================================================== */
+:root {
+  /* Superficies oscuras */
+  --color-bg-base: #0a090c;
+  --color-bg-surface: #101115;
+  --color-bg-panel: #10213f;
+  --color-bg-deep: #04044a;
+
+  /* Acentos */
+  --color-accent-cyan: #01ddfd;
+  --color-accent-blue: #007fff;
+  --color-accent-light: #90ddf0;
+  --color-accent-electric: #00a8ff;
+
+  /* Texto */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #f0edee;
+  --color-text-muted: #a9b6c7;
+  --color-text-subtle: #748296;
+
+  /* Semánticos */
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+
+  /* Compatibilidad con nombres anteriores (sin tonos cafés) */
+  --color-night-900: var(--color-bg-base);
+  --color-night-800: var(--color-bg-surface);
+  --color-night-700: var(--color-bg-panel);
+  --color-blue-900: var(--color-bg-deep);
+  --color-blue-700: var(--color-accent-blue);
+  --color-blue-600: var(--color-accent-electric);
+  --color-gold-500: var(--color-accent-cyan);
+  --color-gold-400: var(--color-accent-electric);
+  --color-gold-300: var(--color-accent-light);
+  --color-cream: var(--color-text-secondary);
+  --color-white: var(--color-text-primary);
+  --color-slate-100: var(--color-text-primary);
+  --color-slate-300: var(--color-text-secondary);
+  --color-slate-400: var(--color-text-muted);
+  --color-slate-500: var(--color-text-subtle);
+  --color-slate-700: var(--color-bg-panel);
+  --bg-surface: var(--bg-surface-glass);
+  --bg-surface-strong: rgba(144, 221, 240, 0.07);
+  --border-gold: var(--border-accent);
+  --shadow-gold: var(--shadow-accent);
+
+  /* Bordes y sombras */
+  --border-soft: rgba(144, 221, 240, 0.12);
+  --border-accent: rgba(1, 221, 253, 0.42);
+  --bg-surface-glass: rgba(16, 33, 63, 0.55);
+  --shadow-card: 0 20px 50px rgba(0, 0, 0, 0.55);
+  --shadow-accent: 0 6px 24px rgba(1, 221, 253, 0.28);
+
+  /* Tipografía */
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --text-2xs: 0.68rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+
+  /* Escalas fluidas */
+  --size-h1: clamp(2.25rem, 5.5vw, 4.25rem);
+  --size-h2: clamp(1.65rem, 3.2vw, 2.6rem);
+  --size-h3: clamp(1.25rem, 2.2vw, 1.8rem);
+  --line-tight: 1.08;
+  --line-snug: 1.3;
+  --line-body: 1.65;
+
+  /* Radios y espaciado */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --z-header: 100;
+  --z-drawer: 900;
+  --z-overlay: 899;
+  --z-modal: 1000;
+
+  --max-width: 1200px;
+
+  /* Movimiento */
+  --transition-fast: 0.18s ease;
+  --transition: 0.28s ease;
+  --transition-smooth: 0.42s;   /* duración; se combina con --ease-out */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
