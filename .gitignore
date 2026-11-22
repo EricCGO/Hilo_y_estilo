@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Entornos y artefactos del proyecto
+.env
+.~lock.*#
+__pycache__/
+*.py[cod]
+backend/venv/
+backend/media/
+backend/staticfiles/
